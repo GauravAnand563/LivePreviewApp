@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:livepreview/theme.dart';
 import 'package:livepreview/widgets/frostedGlassIcon.dart';
 import 'constants.dart';
@@ -22,11 +23,30 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   int index = 0;
+  bool isFABVisible = true;
   @override
   Widget build(BuildContext context) {
     final themeProvider = Provider.of<ThemeProvider>(context, listen: false);
     return SafeArea(
       child: Scaffold(
+        floatingActionButton: isFABVisible &&
+                Provider.of<TabViews>(context, listen: false).selectedIndex == 0
+            ? Container(
+                margin: EdgeInsets.only(bottom: 60),
+                // alignment: Alignment.topRight,
+                child: FrostedGlassIcon(
+                  child: Icon(
+                    themeProvider.isDarkMode
+                        ? CupertinoIcons.sun_max
+                        : CupertinoIcons.moon_stars,
+                    color: Colors.red,
+                  ),
+                  onTap: () {
+                    themeProvider.toggleTheme();
+                  },
+                ),
+              )
+            : null,
         body: Stack(
           children: [
             Container(
@@ -47,7 +67,25 @@ class _HomeScreenState extends State<HomeScreen> {
               children: [
                 Expanded(
                     flex: 10,
-                    child: Provider.of<TabViews>(context).getTabView(context)),
+                    child: NotificationListener<UserScrollNotification>(
+                        onNotification: (notification) {
+                          if (notification.direction ==
+                              ScrollDirection.forward) {
+                            if (!isFABVisible)
+                              setState(() {
+                                isFABVisible = true;
+                              });
+                          } else if (notification.direction ==
+                              ScrollDirection.reverse) {
+                            if (isFABVisible)
+                              setState(() {
+                                isFABVisible = false;
+                              });
+                          }
+                          return true;
+                        },
+                        child: Provider.of<TabViews>(context)
+                            .getTabView(context))),
                 Expanded(
                   child: Container(
                     child: ClipRect(

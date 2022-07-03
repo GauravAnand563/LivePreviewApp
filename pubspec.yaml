@@ -41,15 +41,13 @@ dependencies:
   ionicons: ^0.1.2
   flutter_native_splash: ^2.2.3+1
   flutter_launcher_icons: ^0.9.3
+  transparent_image: ^2.0.0
+  cached_network_image: ^3.2.1
+  visibility_detector: ^0.3.3
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-
-flutter_icons:
-  android: "launcher_icon"
-  ios: true
-  image_path: "assets/light.png"
   
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is

@@ -20,7 +20,6 @@ class _FrostedGlassIconState extends State<FrostedGlassIcon> {
     final themeProvider = Provider.of<ThemeProvider>(context, listen: false);
     return InkWell(
       onTap: () {
-        print('HERE');
         widget.onTap!();
       },
       child: ClipOval(

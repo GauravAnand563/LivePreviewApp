@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:livepreview/widgets/videoMiniPlayer.dart';
 
 import '../constants.dart';
 
@@ -11,10 +12,7 @@ class FavouritePage extends StatelessWidget {
       constraints: BoxConstraints.expand(),
       color: Colors.transparent,
       child: Center(
-        child: Text(
-          'Favourites Page',
-          style: kh1,
-        ),
+        child: VideoMiniPlayer(),
       ),
     );
   }
