@@ -131,12 +131,12 @@ class _HomePageState extends State<HomePage> {
                             ),
                           ),
                           ListViewVideoPlayer(
-                            // url: items[index]['videoUrl'],
-                            url:
-                                "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+                            url: items[index]['videoUrl'],
+                            // url:
+                            //     "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
                             listViewVideoManager: listViewVideoManager,
-                            // image: items[index]['coverPicture'],
-                            image: "https://picsum.photos/200/200",
+                            image: items[index]['coverPicture'],
+                            // image: "https://picsum.photos/200/200",
                           ),
                         ],
                       ),
