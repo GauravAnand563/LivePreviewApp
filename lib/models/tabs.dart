@@ -6,7 +6,7 @@ import '../tabViews/homePage.dart';
 import '../tabViews/searchPage.dart';
 
 class TabViews extends ChangeNotifier {
-  int selectedIndex = 3;
+  int selectedIndex = 0;
   void setTabView(int idx) {
     selectedIndex = idx;
     notifyListeners();

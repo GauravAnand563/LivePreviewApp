@@ -2,9 +2,8 @@ import 'dart:ui';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import '../livePreviewPlayerController.dart';
 
-import '../../widgets/frostedGlassIcon.dart';
+import '../livePreviewPlayerController.dart';
 
 class PlayPauseButton extends StatelessWidget {
   final LivePreviewPlayerController livePreviewPlayerController;

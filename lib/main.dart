@@ -17,32 +17,31 @@ void main() {
   runApp(MyApp());
 }
 
-// class App extends StatelessWidget {
-//   @override
-//   Widget build(BuildContext context) {
-//     return FutureBuilder(
-//       future: DefaultAssetBundle.of(context).loadString('assets/data.json'),
-//       builder: (context, snapshot) {
-//         if (snapshot.hasError) {
-//           return Center(
-//               child: Container(
-//                   height: 100,
-//                   width: MediaQuery.of(context).size.width,
-//                   child: Text('An Unexpected Error occured! :(')));
-//         }
+class App extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return FutureBuilder(
+      future: DefaultAssetBundle.of(context).loadString('assets/data.json'),
+      builder: (context, snapshot) {
+        if (snapshot.hasError) {
+          return Center(
+              child: Container(
+                  height: 100,
+                  width: MediaQuery.of(context).size.width,
+                  child: Text('An Unexpected Error occured! :(')));
+        }
 
-//         if (snapshot.connectionState == ConnectionState.done) {
-//           print('DONE');
-//           return MyApp();
-//         }
+        if (snapshot.connectionState == ConnectionState.done) {
+          return MyApp();
+        }
 
-//         return Center(
-//             child: Container(
-//                 height: 100, width: 100, child: CircularProgressIndicator()));
-//       },
-//     );
-//   }
-// }
+        return Center(
+            child: Container(
+                height: 100, width: 100, child: CircularProgressIndicator()));
+      },
+    );
+  }
+}
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);

@@ -3,16 +3,13 @@ import 'dart:ui';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'theme.dart';
-import 'widgets/frostedGlassIcon.dart';
-import 'constants.dart';
-import 'tabViews/homePage.dart';
-import 'package:provider/provider.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'widgets/bottomNavigationBarButton.dart';
 import 'package:ionicons/ionicons.dart';
+import 'package:provider/provider.dart';
 
 import 'models/tabs.dart';
+import 'theme.dart';
+import 'widgets/bottomNavigationBarButton.dart';
+import 'widgets/frostedGlassIcon.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);

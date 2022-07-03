@@ -7,7 +7,6 @@ import 'package:livepreview/livePreviewPlayer/buttons/playPauseButton.dart';
 import 'package:livepreview/livePreviewPlayer/buttons/progressBar.dart';
 import 'package:video_player/video_player.dart';
 
-import '../widgets/frostedGlassIcon.dart';
 import 'buttons/fullScreenButton.dart';
 import 'livePreviewPlayerController.dart';
 

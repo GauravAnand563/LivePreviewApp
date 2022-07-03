@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import '../videoCaraousel/caraousel_slider.dart';
-import '../widgets/videoMiniPlayer.dart';
 
-import '../constants.dart';
+import '../videoCaraousel/caraousel_slider.dart';
 
 class SearchPage extends StatelessWidget {
   SearchPage({Key? key}) : super(key: key);
