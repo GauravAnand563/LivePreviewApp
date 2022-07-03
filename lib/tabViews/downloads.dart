@@ -48,40 +48,57 @@ class _DownloadPageState extends State<DownloadPage> {
     return Container(
         constraints: const BoxConstraints.expand(),
         color: Colors.transparent,
-        child: Center(
-          child: _child ??
-              Image.network(
-                thumbnailUrl,
-                fit: BoxFit.cover,
-                loadingBuilder: (context, child, progress) {
-                  if (progress == null) {
-                    return Container(
-                        clipBehavior: Clip.antiAlias,
-                        margin: EdgeInsets.all(10),
-                        height: 250,
-                        width: double.infinity,
-                        decoration: BoxDecoration(
-                          boxShadow: [
-                            BoxShadow(
-                                color: Theme.of(context).colorScheme.secondary,
-                                blurRadius: 20,
-                                offset: Offset(1, 1))
-                          ],
-                          borderRadius: BorderRadius.circular(20),
-                          color: Theme.of(context).colorScheme.primary,
-                        ),
-                        child: child);
-                  }
-                  return Container(
-                    constraints: BoxConstraints.tight(Size(50, 50)),
-                    child: FrostedGlassIcon(
-                      child: CircularProgressIndicator(
-                        color: Theme.of(context).backgroundColor,
-                      ),
-                    ),
-                  );
-                },
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            Container(
+              margin: EdgeInsets.only(top: 50, left: 20, bottom: 50),
+              child: Text(
+                'Downloads',
+                style: Theme.of(context).textTheme.headline1,
               ),
+            ),
+            Divider(
+              height: 60,
+            ),
+            Center(
+              child: _child ??
+                  Image.network(
+                    thumbnailUrl,
+                    fit: BoxFit.cover,
+                    loadingBuilder: (context, child, progress) {
+                      if (progress == null) {
+                        return Container(
+                            clipBehavior: Clip.antiAlias,
+                            margin: EdgeInsets.all(10),
+                            height: 250,
+                            width: double.infinity,
+                            decoration: BoxDecoration(
+                              boxShadow: [
+                                BoxShadow(
+                                    color:
+                                        Theme.of(context).colorScheme.secondary,
+                                    blurRadius: 20,
+                                    offset: Offset(1, 1))
+                              ],
+                              borderRadius: BorderRadius.circular(20),
+                              color: Theme.of(context).colorScheme.primary,
+                            ),
+                            child: child);
+                      }
+                      return Container(
+                        constraints: BoxConstraints.tight(Size(50, 50)),
+                        child: FrostedGlassIcon(
+                          child: CircularProgressIndicator(
+                            color: Theme.of(context).backgroundColor,
+                          ),
+                        ),
+                      );
+                    },
+                  ),
+            ),
+          ],
         ));
   }
 }

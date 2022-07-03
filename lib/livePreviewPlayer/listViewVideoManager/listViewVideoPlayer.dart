@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:livepreview/livePreviewPlayer/livePreviewPlayer.dart';
-import 'package:livepreview/livePreviewPlayer/livePreviewPlayerController.dart';
+import '../livePreviewPlayer.dart';
+import '../livePreviewPlayerController.dart';
+import '../../widgets/videoMiniPlayer.dart';
 import 'package:video_player/video_player.dart';
 import 'package:visibility_detector/visibility_detector.dart';
 
@@ -52,9 +53,18 @@ class _ListViewVideoPlayerState extends State<ListViewVideoPlayer> {
         }
       },
       child: Container(
-        child: LivePreviewPlayer(
-          livePreviewPlayerController: livePreviewPlayerController,
-        ),
+        child: (livePreviewPlayerController
+                .videoPlayerController.value.isInitialized)
+            ? LivePreviewPlayer(
+                livePreviewPlayerController: livePreviewPlayerController,
+              )
+            : AspectRatio(
+              aspectRatio: 16/9,
+              child: Image.network(
+                  widget.image!,
+                ),
+            ),
+        // child: VideoPlayerMini(livePreviewPlayerController: livePreviewPlayerController, thumbnailUrl: widget.image!,),
       ),
     );
   }

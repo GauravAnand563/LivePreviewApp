@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:livepreview/livePreviewPlayer/livePreviewPlayerController.dart';
+import '../livePreviewPlayerController.dart';
 
 class ListViewVideoManager {
   List<LivePreviewPlayerController> _livePreviewPlayerController = [];

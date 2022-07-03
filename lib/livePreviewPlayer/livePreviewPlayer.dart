@@ -54,51 +54,15 @@ class _DefaultVideoPlayerState extends State<DefaultVideoPlayer> {
 
   @override
   Widget build(BuildContext context) {
-    if (widget.livePreviewPlayerController.videoPlayerController.value.isInitialized) {
+    if (widget.livePreviewPlayerController.videoPlayerController.value
+        .isInitialized) {
       return AspectRatio(
         aspectRatio: widget.livePreviewPlayerController.videoPlayerController
             .value.aspectRatio,
         child: overlayStack(),
       );
-    } else if (widget.thumbnail != null) {
-      return Container(
-        clipBehavior: Clip.antiAlias,
-        margin: EdgeInsets.all(10),
-        height: 250,
-        width: double.infinity,
-        decoration: BoxDecoration(
-          boxShadow: [
-            BoxShadow(
-                color: Theme.of(context).colorScheme.secondary,
-                blurRadius: 20,
-                offset: Offset(1, 1))
-          ],
-          borderRadius: BorderRadius.circular(20),
-          color: Theme.of(context).colorScheme.primary,
-        ),
-        child: Image.network(widget.thumbnail!),
-      );
-    } else {
-      return Container(
-        clipBehavior: Clip.antiAlias,
-        margin: EdgeInsets.all(10),
-        height: 250,
-        width: double.infinity,
-        decoration: BoxDecoration(
-          boxShadow: [
-            BoxShadow(
-                color: Theme.of(context).colorScheme.secondary,
-                blurRadius: 20,
-                offset: Offset(1, 1))
-          ],
-          borderRadius: BorderRadius.circular(20),
-          color: Theme.of(context).colorScheme.primary,
-        ),
-        child: CircularProgressIndicator(
-          color: Theme.of(context).colorScheme.background,
-        ),
-      );
     }
+    return Container();
   }
 
   Stack overlayStack() {
