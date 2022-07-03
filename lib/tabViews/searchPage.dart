@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:livepreview/videoCaraousel/caraousel_slider.dart';
-import 'package:livepreview/widgets/videoMiniPlayer.dart';
+import '../videoCaraousel/caraousel_slider.dart';
+import '../widgets/videoMiniPlayer.dart';
 
 import '../constants.dart';
 

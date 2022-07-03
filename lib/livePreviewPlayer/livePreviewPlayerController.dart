@@ -78,13 +78,13 @@ class LivePreviewPlayerController {
     );
     _isFullscreen = true;
     _setOrientationForVideo();
-    SystemChrome.setEnabledSystemUIMode(SystemUiMode.leanBack);
+    SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersive);
     await Navigator.of(context).push(route);
   }
 
   Future<void> _exitFullscreen() async {
     await SystemChrome.setEnabledSystemUIMode(
-      SystemUiMode.edgeToEdge,
+      SystemUiMode.immersive,
       overlays: SystemUiOverlay.values,
     );
     await SystemChrome.setPreferredOrientations(
@@ -262,7 +262,7 @@ class FullscreenVideoPlayer extends StatelessWidget {
         resizeToAvoidBottomInset: false,
         body: Container(
           alignment: Alignment.center,
-          color: Colors.black,
+          color: Colors.red,
           child: DefaultVideoPlayer(
             livePreviewPlayerController: livePreviewPlayerController,
             isFullscreen: true,

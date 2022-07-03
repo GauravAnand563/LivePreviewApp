@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:livepreview/widgets/frostedGlassIcon.dart';
-import 'package:livepreview/widgets/videoMiniPlayer.dart';
+import '../widgets/frostedGlassIcon.dart';
+import '../widgets/videoMiniPlayer.dart';
 import 'package:provider/provider.dart';
 
 import '../constants.dart';
